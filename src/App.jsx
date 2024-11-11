@@ -36,7 +36,7 @@ const App = () => {
                 <p style={{display:'flex',justifyContent:'center',fontFamily:'monument',color:'pink'}}>Click to play</p>
             </div>
             <div className='dicegame' onClick={()=>handleClick('rockpaper')} style={{height:'320px',backgroundColor:'gray' ,margin:'10px',userSelect:'none'  }}>
-                <img src="https://i.postimg.cc/0Qhrv6wp/Dice.jpg" alt="" style={{height:'200px ',width:'300px',objectFit:'cover'}}/>
+                <img src="https://i.postimg.cc/PJx2t2s3/rockpaper.jpg" alt="" style={{height:'200px ',width:'300px',objectFit:'cover'}}/>
                 <h1 style={{display:'flex',justifyContent:'center',fontFamily:'monument'}}>Rock Paper</h1>
                 <p style={{display:'flex',justifyContent:'center',fontFamily:'monument',color:'pink'}}>Click to play</p>
             </div>
