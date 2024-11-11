@@ -1,34 +1,51 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react'
+// import Nav from './Components/Nav/Nav'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+import './index.css'
+import Nav from './Components/Nav/Nav'
+import SlotMachine from './Components/slotmachine/SlotMachine'
+import Cards from './Components/Cards/Cards'
+import DiceGame from './Components/Dicegame/DiceGame'
+const App = () => {
+    const [textColor,setTextColor]=useState('white')
+    const [backgroundColor,setBackgroundColor]=useState('black')
+    const[game,setGame]=useState(null)
+    const handleClick=(a)=>{
+      setGame(a)
+      
+    }
+    const handleBack=()=>{
+      setGame(null)
+    }
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className='maindiv' >
+      <Nav/>
+      {!game &&(
+        <div className='Cards' style={{display:'flex'}}>
+            <div className='slotmachine' onClick={()=>handleClick('slotmachine')} style={{height:'320px',backgroundColor:'gray' ,margin:'10px',userSelect:'none'  }}>
+                <img src="https://i.postimg.cc/7Z50rsqj/Slotmachine.jpg" alt="" style={{height:'200px'}}/>
+                <h1 style={{display:'flex',justifyContent:'center',fontFamily:'monument'}}>Slot Game</h1>
+                <p style={{display:'flex',justifyContent:'center',fontFamily:'monument',color:'pink'}}>Click to play</p>
+            </div>
+            {/* Dice game */}
+            <div className='dicegame' onClick={()=>handleClick('dicegame')} style={{height:'320px',backgroundColor:'gray' ,margin:'10px',userSelect:'none'  }}>
+                <img src="https://i.postimg.cc/0Qhrv6wp/Dice.jpg" alt="" style={{height:'200px ',width:'300px',objectFit:'cover'}}/>
+                <h1 style={{display:'flex',justifyContent:'center',fontFamily:'monument'}}>Dice Game</h1>
+                <p style={{display:'flex',justifyContent:'center',fontFamily:'monument',color:'pink'}}>Click to play</p>
+            </div>
+        </div>
+      )}
+      {game &&(
+        <div >
+          {game==='slotmachine'?<SlotMachine/>:<DiceGame/>}
+        <button onClick={handleBack}>Go back</button>
+        </div>
+      )}
+
+      
+      
+      
+    </div>
   )
 }
 
