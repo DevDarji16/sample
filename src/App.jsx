@@ -8,14 +8,17 @@ import Cards from './Components/Cards/Cards'
 import DiceGame from './Components/Dicegame/DiceGame'
 import RockPaper from './rockpaper/RockPaper'
 import Roulette from './Components/Roulette/Roulette'
+import TwoFlips from './Components/TwoFlips/TwoFlips'
+import SlotMachine2 from './Components/slotmachine/SlotMachine2'
 const App = () => {
 
   const carddetails=[
-    {name:'Slot machine', component:'slotmachine',image:'https://i.postimg.cc/7Z50rsqj/Slotmachine.jpg'},
-    {name:'Slot machine', component:'slotmachine',image:'https://i.postimg.cc/7Z50rsqj/Slotmachine.jpg'},
+    {name:'Slot Game', component:'slotmachine',image:'https://i.postimg.cc/7Z50rsqj/Slotmachine.jpg'},
+    {name:'Slot Game 2', component:'slotmachine2',image:'https://i.postimg.cc/7Z50rsqj/Slotmachine.jpg'},
     {name:'Dice Game', component:'dicegame',image:'https://i.postimg.cc/0Qhrv6wp/Dice.jpg'},
     {name:'Rock Paper', component:'rockpaper',image:'https://i.postimg.cc/PJx2t2s3/rockpaper.jpg'},
-    {name:'Roulette', component:'rockpaper',image:'https://i.postimg.cc/sXBFJ80F/roulette.jpg'},
+    {name:'Roulette', component:'roulette',image:'https://i.postimg.cc/sXBFJ80F/roulette.jpg'},
+    {name:'Two Flips', component:'twoflips',image:'https://i.postimg.cc/4xpxkJws/two-flips.jpg'},
   ]
     const [textColor,setTextColor]=useState('white')
     const [backgroundColor,setBackgroundColor]=useState('black')
@@ -36,7 +39,7 @@ const App = () => {
         <div >
           <div className='Cards' style={{display:'flex',flexWrap:'wrap'}}>
           {carddetails.map((a,index)=>(
-            <div key={index} className={a.component} onClick={()=>handleClick(a.component)} style={{height:'320px',backgroundColor:'gray' ,margin:'10px',userSelect:'none' ,width:'300px' }}>
+            <div key={index} className={a.component} id='card' onClick={()=>handleClick(a.component)} style={{height:'320px',backgroundColor:'gray' ,margin:'10px',userSelect:'none' ,width:'300px' }}>
                 <img src={a.image} alt="" style={{height:'200px',width:'300px',objectFit:'cover'}}/>
                 <h1 style={{display:'flex',justifyContent:'center',fontFamily:'monument'}}>{a.name}</h1>
                 <p style={{display:'flex',justifyContent:'center',fontFamily:'monument',color:'pink'}}>Click to play</p>
@@ -78,7 +81,7 @@ const App = () => {
       )}
       {game &&(
         <div >
-          {game==='slotmachine'?<SlotMachine tscore={tscore} setTScore={setTScore}/>:game==='dicegame'?<DiceGame tscore={tscore} setTScore={setTScore}/>:game==='rockpaper'?<RockPaper tscore={tscore} setTScore={setTScore}/>:game==='roulette'?<Roulette/>:null}
+          {game==='slotmachine'?<SlotMachine tscore={tscore} setTScore={setTScore}/>:game==='dicegame'?<DiceGame tscore={tscore} setTScore={setTScore}/>:game==='rockpaper'?<RockPaper tscore={tscore} setTScore={setTScore}/>:game==='roulette'?<Roulette/>:game==='twoflips'?<TwoFlips/>:game==='slotmachine2'?<SlotMachine2/>:none}
          
          <button onClick={handleBack} style={{marginLeft:'20vh',width:'80%',fontFamily:'monument',border:'none',padding:'20px 30px',fontSize:'20px',display:'flex',alignItems:'center',justifyContent:'center'}}>Go back</button>
 
