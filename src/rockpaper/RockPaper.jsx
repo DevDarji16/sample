@@ -1,6 +1,6 @@
 import React, { useState ,useEffect} from 'react'
 
-const RockPaper = () => {
+const RockPaper = ({tscore,setTScore}) => {
   const rps=['✊','✌️','✋']
   const [score,setScore]=useState(0)
   const [compare,setCompare]=useState(null)
@@ -26,6 +26,7 @@ const RockPaper = () => {
     }
     else if((compare==='rock'&&random===1)||(compare==='scissor'&&random===2)||(compare==='paper'&&random===0)){
       setScore(score+1)
+      setTScore(tscore+1)
       setResult('You win')
     }
     else{
@@ -33,7 +34,8 @@ const RockPaper = () => {
     }
   }
   return (
-    <div>
+    <div style={{display:'flex',justifyContent:'center',alignItems:'center',marginTop:''}}>
+        <div style={{textAlign:'center'}}>
 
     <h1 style={{fontFamily:'monument',fontSize:'100px'}}>{random!==null?rps[random]:''}</h1>
       
@@ -48,7 +50,7 @@ const RockPaper = () => {
       
       <h1 style={{fontFamily:'monument'}}>Score:{score}</h1>
       
-    </div>
+    </div></div>
   )
 }
 

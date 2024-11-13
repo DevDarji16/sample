@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { MdOutlineLightMode } from 'react-icons/md';
 import './Nav.css';
+import { FaMonument } from 'react-icons/fa';
 
-const Nav = () => {
+const Nav = ({tscore,setTScore,setGame}) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const handleClick = () => {
@@ -17,13 +18,19 @@ const Nav = () => {
       document.body.classList.add('dark-mode');
     }
   };
+  const handleBack=()=>{
+    setGame(null)
+  }
 
   return (
     <div className="navigation" style={{ backgroundColor: isDarkMode ? 'black' : 'white' }}>
       <div className="logo">
-        <h1 style={{ margin: '10px', fontFamily: 'henny penny', color: isDarkMode ? 'white' : 'black' }}>BlasPhemy</h1>
+       <a href="#" onClick={handleBack} style={{textDecoration:'none'}}>
+       <h1 style={{ margin: '10px', fontFamily: 'henny penny', color: isDarkMode ? 'white' : 'black',userSelect:'none' }}>BlasPhemy</h1></a> 
       </div>
+      <h1 style={{fontFamily:'monument'}}>Score:{tscore}</h1> 
       <div className="navigation-stuff" style={{ margin: '10px', fontSize: '40px' }}>
+        
         <a href="#" onClick={handleClick}>
           <MdOutlineLightMode style={{ color: isDarkMode ? 'white' : 'black' }} />
         </a>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-// import Nav from './Components/Nav/Nav'
+
 
 import './index.css'
 import Nav from './Components/Nav/Nav'
@@ -11,6 +11,7 @@ const App = () => {
     const [textColor,setTextColor]=useState('white')
     const [backgroundColor,setBackgroundColor]=useState('black')
     const[game,setGame]=useState(null)
+    const [tscore,setTScore]=useState(0)
     const handleClick=(a)=>{
       setGame(a)
       
@@ -21,7 +22,7 @@ const App = () => {
     
   return (
     <div className='maindiv' >
-      <Nav/>
+      <Nav tscore={tscore} setTScore={setTScore} setGame={setGame}/>
       {!game &&(
         <div className='Cards' style={{display:'flex'}}>
             <div className='slotmachine' onClick={()=>handleClick('slotmachine')} style={{height:'320px',backgroundColor:'gray' ,margin:'10px',userSelect:'none'  }}>
@@ -35,19 +36,21 @@ const App = () => {
                 <h1 style={{display:'flex',justifyContent:'center',fontFamily:'monument'}}>Dice Game</h1>
                 <p style={{display:'flex',justifyContent:'center',fontFamily:'monument',color:'pink'}}>Click to play</p>
             </div>
-            <div className='dicegame' onClick={()=>handleClick('rockpaper')} style={{height:'320px',backgroundColor:'gray' ,margin:'10px',userSelect:'none'  }}>
+            <div className='rockpaper' onClick={()=>handleClick('rockpaper')} style={{height:'320px',backgroundColor:'gray' ,margin:'10px',userSelect:'none'  }}>
                 <img src="https://i.postimg.cc/PJx2t2s3/rockpaper.jpg" alt="" style={{height:'200px ',width:'300px',objectFit:'cover'}}/>
                 <h1 style={{display:'flex',justifyContent:'center',fontFamily:'monument'}}>Rock Paper</h1>
-                <p style={{display:'flex',justifyContent:'center',fontFamily:'monument',color:'pink'}}>Click to play</p>
+                <p style={{display:'flex',justifyContent:'center',fontFamily:'monument'}}>Click to play</p>
             </div>
         </div>
         
       )}
       {game &&(
         <div >
-          {game==='slotmachine'?<SlotMachine/>:game==='dicegame'?<DiceGame/>:game==='rockpaper'?<RockPaper/>:null}
+          {game==='slotmachine'?<SlotMachine tscore={tscore} setTScore={setTScore}/>:game==='dicegame'?<DiceGame tscore={tscore} setTScore={setTScore}/>:game==='rockpaper'?<RockPaper tscore={tscore} setTScore={setTScore}/>:null}
          
-        <button onClick={handleBack}>Go back</button>
+         <button onClick={handleBack} style={{marginLeft:'20vh',width:'80%',fontFamily:'monument',border:'none',padding:'20px 30px',fontSize:'20px',display:'flex',alignItems:'center',justifyContent:'center'}}>Go back</button>
+
+         
         </div>
       )}
 

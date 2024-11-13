@@ -9,4 +9,18 @@ body.light-mode {
     background-color: black;
     color: white;
   }
-  
+  .slotmachine:hover{
+    background: linear-gradient(black,rgb(78, 0, 123),rgb(202, 111, 241));
+    color: black;
+  }
+  .dicegame:hover{
+    background: linear-gradient(black,rgb(78, 0, 123),rgb(202, 111, 241));
+    color: black;
+  }
+  .rockpaper:hover{
+    background: linear-gradient(black,rgb(78, 0, 123),rgb(202, 111, 241));
+    color: black;
+  }
+  .rockpaper p{
+    color: pink;
+  }

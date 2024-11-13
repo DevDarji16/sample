@@ -1,6 +1,6 @@
     import React, { useState } from 'react'
 
-    const SlotMachine = () => {
+    const SlotMachine = ({tscore,setTScore}) => {
         const style={fontSize:'40px'}
         const slot=['🍒','🍉','🤑','🍀']
         const [slot1,setSlot1]=useState('')
@@ -18,14 +18,16 @@
             if((slota===slotb) &&(slotb===slotc)){
                 setResult('win')
                 setScore(score+1)
+                setTScore(tscore+1)
             }
             else{
                 setResult('lose')
             }
         }
     return (
+        <div style={{display:'flex',justifyContent:'center',alignItems:'center',marginTop:'10%'}}>
         
-            <div className='nothing' style={{fontFamily:'monument'}}><h1>SlotMachine 🎰</h1>
+            <div className='nothing' style={{fontFamily:'monument',textAlign:'center'}}><h1>SlotMachine 🎰</h1>
         <span style={style}>{slot1 ||'❓'}</span>
         <span style={style}>{slot2 ||'❓'}</span>
         <span style={style}>{slot3||'❓'}</span> <br /> <br />
@@ -34,7 +36,7 @@
             <h2>{result==='win '?'You win':'Try again'}</h2>
             </div>}
         <h2 >Score:{score}</h2>
-        </div>
+        </div></div>
         
     )
     }
