@@ -35,8 +35,9 @@ const RockPaper = ({tscore,setTScore}) => {
   }
   return (
     <div style={{display:'flex',justifyContent:'center',alignItems:'center',marginTop:''}}>
+      
         <div style={{textAlign:'center'}}>
-
+          <h1 style={{fontSize:'50px',fontFamily:'monument'}}>Computer's choice</h1>
     <h1 style={{fontFamily:'monument',fontSize:'100px'}}>{random!==null?rps[random]:''}</h1>
       
     <h1 style={{fontFamily:'monument'}}>{result}</h1>
