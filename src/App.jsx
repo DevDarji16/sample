@@ -36,7 +36,7 @@ const App = () => {
         <div >
           <div className='Cards' style={{display:'flex',flexWrap:'wrap'}}>
           {carddetails.map((a,index)=>(
-            <div key={index} className={a.component} onClick={()=>handleClick('slotmachine')} style={{height:'320px',backgroundColor:'gray' ,margin:'10px',userSelect:'none' ,width:'300px' }}>
+            <div key={index} className={a.component} onClick={()=>handleClick(a.component)} style={{height:'320px',backgroundColor:'gray' ,margin:'10px',userSelect:'none' ,width:'300px' }}>
                 <img src={a.image} alt="" style={{height:'200px',width:'300px',objectFit:'cover'}}/>
                 <h1 style={{display:'flex',justifyContent:'center',fontFamily:'monument'}}>{a.name}</h1>
                 <p style={{display:'flex',justifyContent:'center',fontFamily:'monument',color:'pink'}}>Click to play</p>
