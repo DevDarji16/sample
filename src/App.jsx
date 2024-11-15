@@ -50,15 +50,16 @@ const App = () => {
   justifyContent: 'center', // Centers horizontally
   alignItems: 'center', // Centers vertically if needed
   margin: '25px 0'}}><input type="text" placeholder='Search' style={{ height: '40px',
-      width: '80%', // Adjust width to be percentage-based for responsiveness
-      maxWidth: '400px', // Add a maximum width for larger screens
-      textAlign: 'center'}} value={inputValue} onChange={e=>handleSearch(e)}/> 
-      {/* <button onClick={handleSearch}>Search</button> */}
+      width: '80%', 
+      maxWidth: '400px', 
+      textAlign: 'center'
+      }} value={inputValue} onChange={e=>handleSearch(e)}/> 
+     
       </div>
       
       {!game &&(
         <div >
-          <div className='Cards' style={{display:'flex',flexWrap:'wrap'}}>
+          <div className='Cards' style={{display:'flex',flexWrap:'wrap',justifyContent:'center',alignItems:'center'}}>
           {filtered.map((a,index)=>(
             <div key={index} className={a.component} id='card' onClick={()=>handleClick(a.component)} style={{height:'320px',backgroundColor:'gray' ,margin:'10px',userSelect:'none' ,width:'300px' }}>
                 <img src={a.image} alt="" style={{height:'200px',width:'300px',objectFit:'cover'}}/>
