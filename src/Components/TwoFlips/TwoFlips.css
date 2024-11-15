@@ -1,0 +1,17 @@
+#cardA{
+    height:200px;
+    width:150px;
+    border:2px solid none;
+    border-radius:20px;display:flex;justify-content:center;align-items:center;
+    background:linear-gradient(rgb(244, 77, 244),rgb(170, 170, 249))
+
+}
+.container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+   gap: 10px;
+   user-select:none;
+   margin-bottom: 7%;
+   margin-top: 5%;
+}

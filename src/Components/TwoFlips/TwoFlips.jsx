@@ -1,8 +1,32 @@
-import React from 'react'
-
+import React, { useEffect, useState } from 'react'
+import './TwoFlips.css'
 const TwoFlips = () => {
+    const [cardActive,setCardActive]=useState(false)
+    const cardItem=['🍇','🍉','🍏','🪙']
+    const [renderItems,setRenderItems]=useState([])
+    const handleClick=()=>{
+        setCardActive(!cardActive)
+    }
+    // useEffect(
+    //     setRenderItems([cardItem[Math.floor(Math.random()*4)]]),[]
+    // )
   return (
-    <div style={{fontFamily:'monument',textAlign:'center',fontSize:'60px',margin:'12% 30%',color:'pink'}}>Coming up soon</div>
+    <div>
+       <h1 style={{fontFamily:'Monument',textAlign:'center'}}>Two Flips</h1> 
+       
+        <div className="container">
+            <div id='cardA' onClick={handleClick} style={{fontSize:'60px'}}>{cardActive?cardItem[Math.floor(Math.random()*4)]:''}</div>
+            <div id='cardA' onClick={handleClick} style={{fontSize:'60px'}}>{cardActive?cardItem[Math.floor(Math.random()*4)]:''}</div>
+            <div id='cardA' onClick={handleClick} style={{fontSize:'60px'}}>{cardActive?cardItem[Math.floor(Math.random()*4)]:''}</div>
+            <div id='cardA' onClick={handleClick} style={{fontSize:'60px'}}>{cardActive?cardItem[Math.floor(Math.random()*4)]:''}</div>
+            <div id='cardA' onClick={handleClick} style={{fontSize:'60px'}}>{cardActive?cardItem[Math.floor(Math.random()*4)]:''}</div>
+            <div id='cardA' onClick={handleClick} style={{fontSize:'60px'}}>{cardActive?cardItem[Math.floor(Math.random()*4)]:''}</div>
+            <div id='cardA' onClick={handleClick} style={{fontSize:'60px'}}>{cardActive?cardItem[Math.floor(Math.random()*4)]:''}</div>
+           
+            
+          
+        </div>
+    </div>
   )
 }
 

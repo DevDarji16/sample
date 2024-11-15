@@ -1,0 +1,31 @@
+#boxes{
+    height: 100px;
+    width: 100px;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    cursor: pointer;
+    user-select: none;
+}
+#row1{
+    display: flex;
+    gap: 10px;
+    margin-bottom:10px ;
+}
+#row2{
+    display: flex;
+    gap: 10px;
+    margin-bottom:10px ;
+
+}
+#row3{
+    display: flex;
+    gap: 10px;
+    margin-bottom:10px ;
+
+}
+#container{
+    margin-left: 40%;
+}

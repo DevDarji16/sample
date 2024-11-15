@@ -11,6 +11,6 @@ body.light-mode {
   }
   
   #card:hover{
-    background: linear-gradient(black,rgb(78, 0, 123),rgb(134, 192, 253));
+    background: linear-gradient(black,rgb(78, 0, 123),rgb(134, 192, 253),rgb(207, 113, 239));
     color: black;
   }

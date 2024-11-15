@@ -28,7 +28,7 @@ const Nav = ({tscore,setTScore,setGame}) => {
        <a href="#" onClick={handleBack} style={{textDecoration:'none'}}>
        <h1 style={{ margin: '10px', fontFamily: 'henny penny', color: isDarkMode ? 'white' : 'black',userSelect:'none' }}>BlasPhemy</h1></a> 
       </div>
-      <h1 style={{fontFamily:'monument'}}>Score:{tscore}</h1> 
+      <h1 style={{fontFamily:'monument',marginLeft:'-125px'}}>Score:{tscore}</h1> 
       <div className="navigation-stuff" style={{ margin: '10px', fontSize: '40px' }}>
         
         <a href="#" onClick={handleClick}>
