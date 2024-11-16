@@ -1,12 +1,20 @@
 /* Default light mode */
+@font-face{
+  font-family: monument;
+  src:url(./Components/fonts/Monument.otf) format('otf')
+}
+@font-face{
+  font-family: henny penny;
+  src:url(./Components/fonts/HennyPenny.ttf) format('ttf')
+}
 body.light-mode {
-    background-color: white;
+    background:linear-gradient(white,white,rgb(130, 245, 249),rgb(0, 243, 182));
     color: black;
   }
   
   /* Dark mode */
   body.dark-mode {
-    background-color: black;
+    background:linear-gradient(black, black,rgb(252, 155, 255));
     color: white;
   }
   
@@ -14,3 +22,4 @@ body.light-mode {
     background: linear-gradient(black,rgb(78, 0, 123),rgb(134, 192, 253),rgb(207, 113, 239));
     color: black;
   }
+ 

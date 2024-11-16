@@ -23,10 +23,10 @@ const Nav = ({tscore,setTScore,setGame}) => {
   }
 
   return (
-    <div className="navigation" style={{ backgroundColor: isDarkMode ? 'black' : 'white' }}>
+    <div className="navigation" style={{backgroundColor: isDarkMode ? 'black' : 'white' }}>
       <div className="logo">
        <a href="#" onClick={handleBack} style={{textDecoration:'none'}}>
-       <h1 style={{ margin: '10px', fontFamily: 'henny penny', color: isDarkMode ? 'white' : 'black',userSelect:'none' }}>BlasPhemy</h1></a> 
+       <h1 style={{  fontFamily: 'henny penny', color: isDarkMode ? 'white' : 'black',userSelect:'none' }}>BlasPhemy</h1></a> 
       </div>
       <h1 style={{fontFamily:'monument'}}>Score:{tscore}</h1> 
       <div className="navigation-stuff" style={{ margin: '10px', fontSize: '40px' }}>

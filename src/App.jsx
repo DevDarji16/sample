@@ -28,7 +28,7 @@ const App = () => {
     const[game,setGame]=useState(null)
     const [filtered,setFiltered]=useState(carddetails)
     const [tscore,setTScore]=useState(0)
-    const handleClick=(a)=>{
+    const handleClick2=(a)=>{
       setGame(a)
       
     }
@@ -61,8 +61,8 @@ const App = () => {
         <div >
           <div className='Cards' style={{display:'flex',flexWrap:'wrap',justifyContent:'center',alignItems:'center'}}>
           {filtered.map((a,index)=>(
-            <div key={index} className={a.component} id='card' onClick={()=>handleClick(a.component)} style={{height:'320px',backgroundColor:'gray' ,margin:'10px',userSelect:'none' ,width:'300px' }}>
-                <img src={a.image} alt="" style={{height:'200px',width:'300px',objectFit:'cover'}}/>
+            <div key={index} className={a.component} id='card' onClick={()=>handleClick2(a.component)} style={{height:'320px',backgroundColor:'gray' ,margin:'10px',userSelect:'none' ,width:'300px' ,borderRadius:'10px'}}>
+                <img src={a.image} alt="" style={{height:'200px',width:'300px',objectFit:'cover',borderTopRightRadius:'10px',borderTopLeftRadius:'10px'}}/>
                 <h1 style={{display:'flex',justifyContent:'center',fontFamily:'monument'}}>{a.name}</h1>
                 <p style={{display:'flex',justifyContent:'center',fontFamily:'monument',color:'pink'}}>Click to play</p>
             </div>
@@ -82,9 +82,11 @@ const App = () => {
       {game &&(
         <div >
           {game==='slotmachine'?<SlotMachine tscore={tscore} setTScore={setTScore}/>:game==='dicegame'?<DiceGame tscore={tscore} setTScore={setTScore}/>:game==='rockpaper'?<RockPaper tscore={tscore} setTScore={setTScore}/>:game==='roulette'?<Roulette/>:game==='twoflips'?<TwoFlips/>:game==='slotmachine2'?<SlotMachine2/>:game==='tictactoe'?<TicTacToe tscore={tscore} setTScore={setTScore}/>:none}
+         <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+         <button onClick={handleBack} style={{width:'80%',fontFamily:'monument',border:'none',padding:'20px 30px',fontSize:'20px',display:'flex',alignItems:'center',justifyContent:'center',marginBottom:'200px'}}>Go back</button>
+ 
+         </div>
          
-         <button onClick={handleBack} style={{marginLeft:'20vh',width:'80%',fontFamily:'monument',border:'none',padding:'20px 30px',fontSize:'20px',display:'flex',alignItems:'center',justifyContent:'center'}}>Go back</button>
-
          
         </div>
       )}
