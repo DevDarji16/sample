@@ -1,11 +1,11 @@
 /* Default light mode */
 @font-face{
   font-family: monument;
-  src:url(./Components/fonts/Monument.otf) format('otf')
+  src:url(./Components/fonts/Monument.otf) format('opentype')
 }
 @font-face{
   font-family: henny penny;
-  src:url(./Components/fonts/HennyPenny.ttf) format('ttf')
+  src:url(./Components/fonts/HennyPenny.ttf) format('truetype')
 }
 body.light-mode {
     background:linear-gradient(white,white,rgb(130, 245, 249),rgb(0, 243, 182));
