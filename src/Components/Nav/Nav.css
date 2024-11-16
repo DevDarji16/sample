@@ -5,7 +5,7 @@
     /* margin: 0px 30px; */
 }
 .fortunewheel{
-    animation:wheel 1s ease-in-out;
+    animation:wheel 2s ease-in-out;
     animation-iteration-count: infinite;
    
 }
