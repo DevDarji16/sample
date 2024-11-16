@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-
+import aud2 from './Components/aud/clickbutton.mp3'
 import './index.css'
 import Nav from './Components/Nav/Nav'
 import SlotMachine from './Components/slotmachine/SlotMachine'
@@ -13,6 +13,10 @@ import SlotMachine2 from './Components/slotmachine/SlotMachine2'
 import TicTacToe from './TicTacToe/TicTacToe'
 import Gemstack from './Components/GemStack/Gemstack'
 const App = () => {
+  const handleaud=()=>{
+    const sound=new Audio(aud2)
+    sound.play()
+}
 
   const carddetails=[
     {name:'Slot Game', component:'slotmachine',image:'https://i.postimg.cc/7Z50rsqj/Slotmachine.jpg'},
@@ -59,7 +63,7 @@ const App = () => {
       </div>
           <div className='Cards' style={{display:'flex',flexWrap:'wrap',justifyContent:'center',alignItems:'center'}}>
           {filtered.map((a,index)=>(
-            <div key={index} className={a.component} id='card' onClick={()=>handleClick2(a.component)} style={{height:'320px',backgroundColor:'gray' ,margin:'10px',userSelect:'none' ,width:'300px' ,borderRadius:'10px'}}>
+            <div onMouseEnter={handleaud} key={index} className={a.component} id='card' onClick={()=>handleClick2(a.component)} style={{height:'320px',backgroundColor:'gray' ,margin:'10px',userSelect:'none' ,width:'300px' ,borderRadius:'10px'}}>
                 <img src={a.image} alt="" style={{height:'200px',width:'300px',objectFit:'cover',borderTopRightRadius:'10px',borderTopLeftRadius:'10px'}}/>
                 <h1 style={{display:'flex',justifyContent:'center',fontFamily:'monument'}}>{a.name}</h1>
                 <p style={{display:'flex',justifyContent:'center',fontFamily:'monument',color:'pink'}}>Click to play</p>

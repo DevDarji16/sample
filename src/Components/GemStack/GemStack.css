@@ -1,0 +1,30 @@
+#right-part{
+    display: grid;
+    grid-template-columns: repeat(5,100px);
+    gap: 10px;
+    margin-top: 20px;
+}
+#left-part{
+    height: 600px;
+    width: 450px;
+    background-color: grey;
+    border-radius: 20px;
+   
+}
+#main-part{
+    display: flex; 
+    gap: 20%;
+    margin: 0px 40px;
+    margin-bottom: 10px;
+    
+}
+.boxes{
+    height: 100px;
+    width: 100px;
+    background-color: rgb(79, 78, 78);
+    transition: all 0.15s ease-in-out;
+}
+.boxes:hover{
+transform: translateY(-6px);
+background-color: #797979;
+}
