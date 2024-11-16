@@ -7,7 +7,11 @@
   font-family: henny penny;
   src:url(./Components/fonts/HennyPenny.ttf) format('truetype')
 }
-body.light-mode {
+/* body.light-mode {
+    background:linear-gradient(white,white,rgb(130, 245, 249),rgb(0, 243, 182));
+    color: black;
+  } */
+  body {
     background:linear-gradient(white,white,rgb(130, 245, 249),rgb(0, 243, 182));
     color: black;
   }

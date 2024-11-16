@@ -8,7 +8,7 @@ const Nav = ({tscore,setTScore,setGame}) => {
 
   const handleClick = () => {
     setIsDarkMode(!isDarkMode);
-
+    
     // Toggle body class based on dark mode
     if (isDarkMode) {
       document.body.classList.remove('dark-mode');
@@ -23,12 +23,14 @@ const Nav = ({tscore,setTScore,setGame}) => {
   }
 
   return (
+    
     <div className="navigation" style={{backgroundColor: isDarkMode ? 'black' : 'white' }}>
       <div className="logo">
        <a href="#" onClick={handleBack} style={{textDecoration:'none'}}>
        <h1 style={{  fontFamily: 'henny penny', color: isDarkMode ? 'white' : 'black',userSelect:'none' }}>BlasPhemy</h1></a> 
       </div>
       <h1 style={{fontFamily:'monument'}}>Score:{tscore}</h1> 
+      <img className='fortunewheel' src="https://i.postimg.cc/Gm41wMLT/fortune2.png" height='100px' alt="" />
       <div className="navigation-stuff" style={{ margin: '10px', fontSize: '40px' }}>
         
         <a href="#" onClick={handleClick}>
