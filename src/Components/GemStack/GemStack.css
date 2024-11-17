@@ -28,3 +28,38 @@
 transform: translateY(-6px);
 background-color: #797979;
 }
+#button{
+   display: flex;
+   justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+
+}
+button{
+    padding:20px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-family: monument;
+    border: none;
+    font-size: 18px;
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+}
+button:hover{
+    
+    background:linear-gradient(to bottom left  ,rgb(255, 175, 255),purple);
+    color: black;
+    transform: translateY(-6px);
+
+}
+#checkout{
+   margin-left: 30%;
+   margin-top: 10%;
+}
+#checkout:hover{
+    
+    background:linear-gradient(to bottom left  ,rgb(181, 252, 207),rgb(2, 195, 2));
+    color: black;
+    transform: translateY(-6px);
+
+}

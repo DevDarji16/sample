@@ -63,7 +63,7 @@ const App = () => {
       </div>
           <div className='Cards' style={{display:'flex',flexWrap:'wrap',justifyContent:'center',alignItems:'center'}}>
           {filtered.map((a,index)=>(
-            <div onMouseEnter={handleaud} key={index} className={a.component} id='card' onClick={()=>handleClick2(a.component)} style={{height:'320px',backgroundColor:'gray' ,margin:'10px',userSelect:'none' ,width:'300px' ,borderRadius:'10px'}}>
+            <div  onMouseEnter={handleaud} key={index} className={a.component} id='card' onClick={()=>handleClick2(a.component)} style={{height:'320px',backgroundColor:'gray' ,margin:'10px',userSelect:'none' ,width:'300px' ,borderRadius:'10px'}}>
                 <img src={a.image} alt="" style={{height:'200px',width:'300px',objectFit:'cover',borderTopRightRadius:'10px',borderTopLeftRadius:'10px'}}/>
                 <h1 style={{display:'flex',justifyContent:'center',fontFamily:'monument'}}>{a.name}</h1>
                 <p style={{display:'flex',justifyContent:'center',fontFamily:'monument',color:'pink'}}>Click to play</p>
