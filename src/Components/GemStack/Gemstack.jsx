@@ -10,6 +10,7 @@ const Gemstack = () => {
   const [items,setItems]=useState([])
   const [random,setRandom]=useState([])
   const [gameOver,setGameOver]=useState(false)
+  const [inputValue,setInputValues]=useState(1)
   const handleaud=()=>{
     const sound=new Audio(aud1)
     sound.play()
@@ -49,10 +50,16 @@ useEffect(() => {
     
   }
   setItems(item)}
+
+  const handleMines=()=>{
+    setInputMines(inputValue)
+  }
   return (
     <div>
       <div id='main-part'>
         <div id='left-part' >
+        <input type="text" onChange={e=>setInputValues(e.target.value)}value={inputValue}placeholder='Enter the number of mines' min={1} max={24} style={{margin:'10px',padding:'20px',fontFamily:'monument'}}/> 
+        <button onClick={handleMines} >Add</button>
           <div id='button'>
           <button onClick={()=>setInputMines(3)} onMouseEnter={handleaud}>Easy</button>
           <button onClick={()=>setInputMines(7)} onMouseEnter={handleaud}>Medium</button>
